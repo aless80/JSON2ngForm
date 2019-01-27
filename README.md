@@ -28,9 +28,8 @@ I wanted to make this process dynamic and let the user create the rubric. In par
 ## Progress:
 Point 2 above is implemented and works. Check it at the [/rubric/formspec.json]() endpoint
 
-![rubric](https://github.com/aless80/JSON2ngForm/blob/master/img/02_rubric.png 400x)
 
-<a href="url"><img src="https://github.com/aless80/JSON2ngForm/blob/master/img/02_rubric.png" align="left" height="400" ></a>
+<a href="url"><img src="https://github.com/aless80/JSON2ngForm/blob/master/img/02_rubric.png" height="400" ></a>
 
 
 
