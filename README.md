@@ -8,18 +8,18 @@ My aim was to create a website with a rubric, i.e. a form with checkboxes (actua
 For example the following rubric has two components, each consisting in text for criterion, a variable number of radio buttons with associated number of points and feedback text: 
 
 **Criterion: Spelling, punctuation, grammar**
-- [ ] 0 points
->>Feedback: Needs improvement!
-- [x] 3 points
->>Feedback: Satisfactory
-- [ ] 5 points
- >>Feedback: Excellent
+- [ ] 0 points  
+&nbsp;&nbsp;&nbsp;&nbsp; Feedback: Needs improvement!
+- [x] 3 points  
+&nbsp;&nbsp;&nbsp;&nbsp;Feedback: Satisfactory
+- [ ] 5 points  
+ &nbsp;&nbsp;&nbsp;&nbsp;Feedback: Excellent
 
 **Criterion: Text comprehension**
- - [] 0 points
->> Feedback: Several required elements are missing
- - [x] 5 points 
->> Feedback: The text content is clearly identified and reproduced
+ - [] 0 points  
+&nbsp;&nbsp;&nbsp;&nbsp; Feedback: Several required elements are missing
+ - [x] 5 points   
+&nbsp;&nbsp;&nbsp;&nbsp; Feedback: The text content is clearly identified and reproduced
 
 I wanted to make this process dynamic and let the user create the rubric. In particular I needed two webpages: 
 1. A page allowing users to generate a rubric. The user should adding each component (criterion, checkboxes with associated points and feedback) and type in text, number points, feedback. The specifications for the resulting rubric should be stored as json;
