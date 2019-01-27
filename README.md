@@ -13,12 +13,12 @@ For example the following rubric has two components, each consisting in text for
 - [x] 3 points  
 &nbsp;&nbsp;&nbsp;&nbsp;Feedback: Satisfactory
 - [ ] 5 points  
- &nbsp;&nbsp;&nbsp;&nbsp;Feedback: Excellent
+&nbsp;&nbsp;&nbsp;&nbsp;Feedback: Excellent
 
 **Criterion: Text comprehension**
- - [] 0 points  
+- [ ] 0 points  
 &nbsp;&nbsp;&nbsp;&nbsp; Feedback: Several required elements are missing
- - [x] 5 points   
+- [x] 5 points   
 &nbsp;&nbsp;&nbsp;&nbsp; Feedback: The text content is clearly identified and reproduced
 
 I wanted to make this process dynamic and let the user create the rubric. In particular I needed two webpages: 
