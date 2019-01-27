@@ -26,12 +26,11 @@ I wanted to make this process dynamic and let the user create the rubric. In par
 2. As a final result, create the rubric as a form from a json specification.
 
 ## Progress:
-Point 2 above is implemented and works. Check it at the [/rubric/formspec.json](http://localhost:4200/rubric/formspec.json) endpoint
+Point 2 above is implemented and works. Check it at the [/rubric/formspec.json]() endpoint
 
-![picture alt](https://github.com/aless80/JSON2ngForm/blob/master/img/02_rubric.png =300x)
+![rubric](https://github.com/aless80/JSON2ngForm/blob/master/img/02_rubric.png)
 
-
-
+<a href="url"><img src="https://github.com/aless80/JSON2ngForm/blob/master/img/02_rubric.png" align="left" height="250" ></a>
 
 
 
