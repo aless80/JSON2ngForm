@@ -1,0 +1,72 @@
+[
+  {
+    "element": "input",
+    "type": "text",
+    "name": "criterion",
+    "value": "Some criterion"
+  },
+
+  {
+    "element": "p",
+    "name": "p",
+    "value": "Criterion number 1"
+  },
+  {
+    "element": "input",
+    "label": "0 points",
+    "type": "radio",
+    "name": "score1",
+    "id": "score1_1",
+    "checked": "true"
+  },
+  {
+    "element": "input",
+    "type": "text",
+    "name": "feedback1",
+    "value": "Some bad feedback"
+  },
+  {
+    "element": "input",
+    "label": "5 points",
+    "type": "radio",
+    "name": "score1",
+    "id": "score1_2"
+  },
+  {
+    "element": "input",
+    "type": "text",
+    "name": "feedback2",
+    "value": "Some good feedback"
+  },
+
+      
+
+  {
+    "element": "input",
+    "type": "number",
+    "label": "Points",
+    "name": "score",
+    "value": 0    
+  },
+  {
+    "element": "input",
+    "type": "text",
+    "label": "Feedback",
+    "name": "feedback",
+    "value": "Bad feedback"    
+  },
+  {
+    "element": "input",
+    "type": "number",
+    "label": "Points",
+    "name": "score",
+    "value": "5"    
+  },
+  {
+    "element": "input",
+    "type": "text",
+    "label": "Feedback",
+    "name": "feedback",
+    "value": "Good feedback"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "name": "spelling",
+    "criterion": "Spelling, punctuation, grammar",
+    "radio": [
+      {
+        "score": 0,
+        "feedback": "Spelling, punctuation, grammar need improvement"
+      },
+      {
+        "score": 3,
+        "feedback": "Spelling, punctuation, grammar are satisfactory"
+      },
+      {
+        "score": 5,
+        "feedback": "Spelling, punctuation, grammar are excellent"
+      }
+    ]
+  },
+  {
+    "name": "comprehension",
+    "criterion": "Text comprehension",
+    "radio": [
+      {
+        "score": 0,
+        "feedback": "Several required elements are missing"
+      },
+      {
+        "score": 5,
+        "feedback": "The text content is clearly identified and reproduced"
+      }
+    ]
+  }
+]

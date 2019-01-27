@@ -1,0 +1,17 @@
+.app {
+  background: #fff;
+  padding: 20px 30px;
+  width: auto;
+  height: auto;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+.app .criterion {
+  font-weight: bold;
+}
+.app label {
+  font-weight: normal;
+}
+.app .feedback {
+  margin-left: 1em;
+}

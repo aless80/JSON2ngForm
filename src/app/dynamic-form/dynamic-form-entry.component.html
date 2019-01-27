@@ -1,0 +1,11 @@
+https://toddmotto.com/angular-dynamic-components-forms
+
+<div class="app">
+    <dynamic-form
+        [config]="config"
+        #form="dynamicForm"
+        (submit)="submit($event)">
+    </dynamic-form>
+    {{ form.valid }}
+    {{ form.value | json }}
+  </div>

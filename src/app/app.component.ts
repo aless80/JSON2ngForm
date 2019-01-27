@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['app.component.scss'],
+  template: `<router-outlet></router-outlet>`
 })
-export class AppComponent {
-  title = 'rubric';
+export class AppComponent implements OnInit {
+
+  constructor () { }
+
+  ngOnInit () { }
+
 }
