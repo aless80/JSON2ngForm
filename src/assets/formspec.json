@@ -5,15 +5,15 @@
     "radio": [
       {
         "score": 0,
-        "feedback": "Spelling, punctuation, grammar need improvement"
+        "feedback": "Needs improvement"
       },
       {
         "score": 3,
-        "feedback": "Spelling, punctuation, grammar are satisfactory"
+        "feedback": "Satisfactory"
       },
       {
         "score": 5,
-        "feedback": "Spelling, punctuation, grammar are excellent"
+        "feedback": "Excellent"
       }
     ]
   },

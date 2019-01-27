@@ -1,5 +1,37 @@
-# Rubric
+# JSON2ngForm
 
+Work in progress
+
+## Project description
+My aim was to create a website with a rubric, i.e. a form with checkboxes (actually radio buttons) and text. The main structure for each textbox should be the same. 
+
+For example the following rubric has two components, each consisting in text for criterion, a variable number of radio buttons with associated number of points and feedback text: 
+
+**Criterion: Spelling, punctuation, grammar**
+- [ ] 0 points
+>>Feedback: Needs improvement!
+- [x] 3 points
+>>Feedback: Satisfactory
+- [ ] 5 points
+ >>Feedback: Excellent
+
+**Criterion: Text comprehension**
+ - [] 0 points
+>> Feedback: Several required elements are missing
+ - [x] 5 points 
+>> Feedback: The text content is clearly identified and reproduced
+
+I wanted to make this process dynamic and let the user create the rubric. In particular I needed two webpages: 
+1. A page allowing users to generate a rubric. The user should adding each component (criterion, checkboxes with associated points and feedback) and type in text, number points, feedback. The specifications for the resulting rubric should be stored as json;
+2. As a final result, create the rubric as a form from a json specification.
+
+## Progress:
+Point 2 above is implemented and works. Check it at the [/rubric/formspec.json](http://localhost:4200/rubric/formspec.json) endpoint
+
+Markup : ![picture alt](https://github.com/aless80/JSON2ngForm/blob/master/img/02_rubric.png "Rubric rendered from json")
+
+
+## Generated README:
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
 
 ## Development server
