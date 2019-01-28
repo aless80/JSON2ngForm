@@ -11,6 +11,9 @@ import { RubricbuilderComponent } from './rubricbuilder/rubricbuilder.component'
 import { DynamicFormEntryComponent } from './dynamic-form/dynamic-form-entry.component';
 import { DynamicFormModule } from './dynamic-form/dynamic-form.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SinglerubricComponent } from './singlerubric/singlerubric.component';
+
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/rubric', pathMatch: 'full' }, 
@@ -29,6 +32,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     DynamicFormModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   bootstrap: [
     AppComponent
@@ -39,6 +43,7 @@ const appRoutes: Routes = [
     RubricbuilderComponent,
     DynamicFormEntryComponent,
     PageNotFoundComponent,
+    SinglerubricComponent,
   ],
   providers: [],
 })

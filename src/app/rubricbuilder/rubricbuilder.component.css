@@ -1,0 +1,88 @@
+.app {
+  background: #fff;
+  padding: 20px 30px;
+  width: auto;
+  height: auto;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+.app .criterion {
+  width: auto;
+}
+.app .radio {
+  margin-left: 3em;
+}
+.app input[type="number"] {
+  width: 4em;
+}
+
+.app textarea.feedback {
+  vertical-align: top;
+}
+/*.app valign {
+  display: inline;
+  vertical-align: top;
+}*/
+.app textarea.criterion {
+  width: 100%;
+  height: 100%;
+  margin-top: 2em;
+}
+table {
+  border: 1px solid black;
+}
+td {
+  border: 1px dotted gray;
+}
+button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+
+
+.mvButtons ul, .mvButtons li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+  vertical-align:top;
+}
+.mvButtons li.mvLeft, .mvButtons li.mvIcon, .mvButtons li.mvRight {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background: black;
+  margin: 1px;
+  border-radius: 5px;
+  border: 1px solid #aaaaaa;
+  text-align:center;
+  line-height:20px;
+}
+
+
+.mvButtons li.mvLeft::before {
+  content:"";
+  display:inline-block;
+  width: 0;
+  height: 0;
+  vertical-align:middle;
+  border-style: solid;
+  border-width: 0 5px 10px 5px;
+  border-color: transparent transparent greenyellow transparent;
+}
+.mvButtons li.mvIcon {
+  line-height: 1.5;
+  color: red;
+}
+.mvButtons li.mvRight::before {
+  content:'';
+  display:inline-block;
+  vertical-align:middle;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8.7px 5px 0 5px;
+  border-color: greenyellow transparent transparent transparent;
+}

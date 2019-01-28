@@ -40,7 +40,9 @@ export class RubricComponent implements OnInit {
   ngOnInit() {
     /// Read the json file, populate the form group
     // The json file is given by its name. Its path is the /assets folder
-    this.jsonfile = this.route.snapshot.params.json;
+    if (typeof this.route.snapshot.params.json !== 'undefined') {
+      this.jsonfile = this.route.snapshot.params.json;
+    }
     if (!this.jsonfile.endsWith(".json")) {
       this.jsonfile += '.json';
     }
