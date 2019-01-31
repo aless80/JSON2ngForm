@@ -49,7 +49,7 @@ button {
   display: inline-block;
   vertical-align:top;
 }
-.mvButtons li.mvLeft, .mvButtons li.mvIcon, .mvButtons li.mvRight {
+.mvButtons li.mvUp, .mvButtons li.clear, .mvButtons li.mvDown {
   width: 25px;
   height: 25px;
   cursor: pointer;
@@ -61,8 +61,7 @@ button {
   line-height:20px;
 }
 
-
-.mvButtons li.mvLeft::before {
+.mvButtons li.mvUp::before {
   content:"";
   display:inline-block;
   width: 0;
@@ -72,11 +71,12 @@ button {
   border-width: 0 5px 10px 5px;
   border-color: transparent transparent greenyellow transparent;
 }
-.mvButtons li.mvIcon {
+
+.mvButtons li.clear {
   line-height: 1.5;
   color: red;
 }
-.mvButtons li.mvRight::before {
+.mvButtons li.mvDown::before {
   content:'';
   display:inline-block;
   vertical-align:middle;

@@ -25,13 +25,10 @@
         </tr>
         <tr class="form-group radio" *ngFor="let radio of rubric.radio; index as j">
           <td>
-            <!--<p style="display: inline;">Points:&nbsp;</p>-->
             Points:&nbsp;
             <input type="number" name="score_{{i}}_{{j}}" [(ngModel)]="radio.score"/>&nbsp;
           </td>
           <td>
-            <!--<p style="display: inline;">Feedback:&nbsp;</p>
-            Feedback:&nbsp;-->
             <textarea type="text" name="feedback_{{i}}_{{j}}" class="feedback"
               id="feedback_{{i}}_{{j}}" size="40" style="display: inline;" [(ngModel)]="radio.feedback" rows="2" cols="50" placeholder="feedback">
             </textarea>
@@ -39,11 +36,11 @@
           <td>
             <div class="mvButtons">
                 <ul>
-                    <li title="Move Up" class="mvLeft" id="mvUp" (click)="clickMoveUp()"></li>
+                    <li title="Move Up" class="mvUp" id="mvUpRadio_{{i}}_{{j}}" (click)="clickMoveUpRadio($event)"></li>
                     <br>
-                    <li title="Camera" class="mvIcon" (click)="clickRemove()">&#10006;</li>
+                    <li title="Remove" class="clear" id="rmRadio_{{i}}_{{j}}" (click)="clickRemoveRadio($event)">&#10006;</li>
                     <br>
-                    <li title="Move Down" class="mvRight" id="mvDown" (click)="clickmoveDown()"></li>
+                    <li title="Move Down" class="mvDown" id="mvDownRadio_{{i}}_{{j}}" (click)="clickMoveDownRadio($event)"></li>
                 </ul>
             </div>
           </td>

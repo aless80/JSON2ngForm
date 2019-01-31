@@ -31,14 +31,14 @@ export class RubricbuilderComponent implements OnInit {
   }
 
   clickAppendPoint(event) {
-    console.log("clickAddPoint event.srcElement.id",event.srcElement.id);
+    console.log("clickAppendPoint event.srcElement.id",event.srcElement.id);
     //Get the rubric index (i in html)
     let rubric_ind = parseInt(event.srcElement.id.split('_')[1]);
     let radio_ind = this.rubrics[rubric_ind].radio.length;
     this.addRadio2json(rubric_ind, radio_ind);
   }
 
-  addRubricUnit2json(rubric_ind) {    
+  addRubricUnit2json(rubric_ind:number) {    
     var name = "rubric_"+rubric_ind
     const radio = {
       score: 0,
@@ -51,24 +51,43 @@ export class RubricbuilderComponent implements OnInit {
     });
   }
 
-  addRadio2json(rubric_ind, radio_ind) {
-    console.log('addPoint to rubric_ind:',rubric_ind)
-    this.rubrics[rubric_ind]['radio'].splice(radio_ind, 0, {
-      score: 0,
-      feedback: ""
-    });
+  addRadio2json(rubric_ind:number, radio_ind:number, radio_obj:any='') {
+    console.log('addRadio2json to rubric_ind:',rubric_ind)
+    if (radio_obj == '') {
+      radio_obj = {
+        score: 0,
+        feedback: ""
+      }
+    }
+    this.rubrics[rubric_ind]['radio'].splice(radio_ind, 0, radio_obj);
+  }
+  removeRadioFromjson(rubric_ind:number, radio_ind:number) {
+    this.rubrics[rubric_ind]['radio'].splice(radio_ind, 1);
+  }
+  clickMoveUpRadio(event){
+    let [i,j] = this.getIndicesFromIDs(event);
+    if (j == 0) return
+    const radio_obj = this.rubrics[i].radio[j];
+    this.removeRadioFromjson(i,j);
+    this.addRadio2json(i, j-1, radio_obj);
+  }
+  clickMoveDownRadio(event){
+    let [i,j] = this.getIndicesFromIDs(event);
+    if (j == this.rubrics.length) return
+    const radio_obj = this.rubrics[i].radio[j];
+    this.removeRadioFromjson(i,j)
+    this.addRadio2json(i, j+1, radio_obj)
+  }
+  clickRemoveRadio(event){
+    let [i,j] = this.getIndicesFromIDs(event);
+    this.removeRadioFromjson(i,j);
+  }
+  //Retrieves rubric and radio indices from event and ID in markup
+  getIndicesFromIDs(event) {
+    //IDs are formatted as string_i_j
+    return event.srcElement.id.split('_').slice(1)
   }
 
-  clickMoveUp(){
-
-  }
-
-  clickMoveDown(){
-
-  }
-  clickRemove(){
-    
-  }
   test(){
     console.log(this.rubrics)
   }
