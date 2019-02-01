@@ -7,20 +7,8 @@ import { Observable, of } from "rxjs";
 })
 export class RubricbuilderComponent implements OnInit {
   constructor() {}
-
+  showImportArea:boolean = false;
   rubrics: any = [];
-
-  /*radio_unit: object = {
-    score: 0,
-    feedback: ""
-  };
-
-  rubric_unit: object = {
-    name: "default",
-    criterion: "",
-    radio: [ ]
-  };
-  */
 
   ngOnInit() {
     this.addRubricUnit2json(this.rubrics.length);
@@ -50,7 +38,6 @@ export class RubricbuilderComponent implements OnInit {
       radio: [ radio ]
     });
   }
-  
   
   addRadio2json(rubric_ind:number, radio_ind:number, radio_obj:any='') {
     console.log('addRadio2json to rubric_ind:',rubric_ind)
@@ -84,29 +71,20 @@ export class RubricbuilderComponent implements OnInit {
     this.removeRadioFromjson(i,j);
   }
   //Retrieves rubric and radio indices from event and ID in markup
-  getIndicesFromIDs(event) {
+  private getIndicesFromIDs(event) {
     //IDs are formatted as string_i_j
     return event.srcElement.id.split('_').slice(1)
   }
 
-
-  //private element =  null as HTMLElement
-  dynamicDownloadJson() {
+  downloadJson() {
     of(this.rubrics).subscribe((res) => {
-      this.dyanmicDownloadByHtmlTag(JSON.stringify(res), 'rubric.json');
-    });
-  }
-  private dyanmicDownloadByHtmlTag(text: string, fileName: string) {
-    const element = document.getElementById('download');
-    console.log("encodeURIComponent(text)=",encodeURIComponent(text))
-    element.setAttribute('href', `data:'text/json';charset=utf-8,${encodeURIComponent(text)}`);
-    //element.setAttribute('download', fileName);
-    var event = new MouseEvent("click");
-    element.dispatchEvent(event);
-  }
-
-
-  showImportArea:boolean = false;
+      const element = document.getElementById('download');
+      element.setAttribute('href', `data:'text/json';charset=utf-8,${encodeURIComponent(JSON.stringify(res))}`);
+      //element.setAttribute('download', fileName);
+      var event = new MouseEvent("click");
+      element.dispatchEvent(event);
+    }
+  )}
 
   importJSON2Rubric() {
     try {
