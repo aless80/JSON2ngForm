@@ -48,7 +48,7 @@
         <tr>
           <td></td>
           <td>
-            <button class="btn-dark" id="addpoint_{{i}}" (click)="clickAppendPoint($event)">Add Point & Feedback</button>
+            <button class="btn-dark" id="addpoint_{{i}}" (click)="clickAppendPoint($event)">Add Point/Feedback</button>
           </td>
           <td></td>
         </tr>
@@ -56,6 +56,16 @@
     <tbody>
   </table>
   <button class="btn-dark" id="addrubricunit" (click)="clickAppendRubricUnit()">Add Rubric Unit</button>
-  
-  <button class="btn-dark" style="margin-left: 3em;" (click)="test()">test</button>
+  <!--<button class="btn-dark" (click)="test()" style="margin-left:1em;">test</button>-->
+  <br>
+  <div *ngIf="!showImportArea">
+    <button class="btn-dark" (click)="dynamicDownloadJson()" >Download JSON</button>
+    <button class="btn-dark" (click)="showImportArea=!showImportArea" style="margin-left:1em;">Import JSON</button>
+  </div>
+  <div *ngIf="showImportArea">
+    <textarea type="text" name="importjson" class="feedback" id="importjson" style="display: inline;" rows="3" cols="80" placeholder="json string" [(ngModel)]="importjson"></textarea>
+    <br>
+    <button class="btn-dark" (click)="importJSON2Rubric()">importJSON2Rubric</button>
+    <button class="btn-dark" (click)="showImportArea=false" style="margin-left:1em;">Cancel</button>
+  </div>
 </div>

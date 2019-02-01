@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-
+import { Observable, of } from "rxjs";
 @Component({
   selector: "app-rubricbuilder",
   templateUrl: "./rubricbuilder.component.html",
@@ -50,7 +50,8 @@ export class RubricbuilderComponent implements OnInit {
       radio: [ radio ]
     });
   }
-
+  
+  
   addRadio2json(rubric_ind:number, radio_ind:number, radio_obj:any='') {
     console.log('addRadio2json to rubric_ind:',rubric_ind)
     if (radio_obj == '') {
@@ -86,6 +87,49 @@ export class RubricbuilderComponent implements OnInit {
   getIndicesFromIDs(event) {
     //IDs are formatted as string_i_j
     return event.srcElement.id.split('_').slice(1)
+  }
+
+
+  //private element =  null as HTMLElement
+  dynamicDownloadJson() {
+    of(this.rubrics).subscribe((res) => {
+      this.dyanmicDownloadByHtmlTag(JSON.stringify(res), 'rubric.json');
+    });
+  }
+  private dyanmicDownloadByHtmlTag(text: string, fileName: string) {
+    const element = document.getElementById('download');
+    console.log("encodeURIComponent(text)=",encodeURIComponent(text))
+    element.setAttribute('href', `data:'text/json';charset=utf-8,${encodeURIComponent(text)}`);
+    //element.setAttribute('download', fileName);
+    var event = new MouseEvent("click");
+    element.dispatchEvent(event);
+  }
+
+
+  showImportArea:boolean = false;
+
+  importJSON2Rubric() {
+    try {
+      var parsed: any = []; 
+      const importjson:string = JSON.stringify([{
+        name: name,
+        criterion: "some criterion",
+        radio: [{
+          score: 0,
+          feedback: "some feedback"
+        }]
+      }]);
+      parsed = JSON.parse(importjson);
+      this.rubrics = parsed;
+    } catch (error) {
+      console.log("error:",error)
+      if (error instanceof SyntaxError) {
+          alert("There was a syntax error. Please correct it and try again:\n" + error.message);
+      } else {
+          throw error;
+      }
+    }
+    this.showImportArea = false;
   }
 
   test(){
