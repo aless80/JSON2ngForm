@@ -1,6 +1,6 @@
 [
   {
-    "name": "spelling",
+    "name": "rubric_0",
     "criterion": "Spelling, punctuation, grammar",
     "radio": [
       {
@@ -18,7 +18,7 @@
     ]
   },
   {
-    "name": "comprehension",
+    "name": "rubric_1",
     "criterion": "Text comprehension",
     "radio": [
       {

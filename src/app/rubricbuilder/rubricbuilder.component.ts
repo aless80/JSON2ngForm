@@ -9,6 +9,7 @@ export class RubricbuilderComponent implements OnInit {
   constructor() {}
   showImportArea:boolean = false;
   rubrics: any = [];
+  parsedJSON:string;
 
   ngOnInit() {
     this.addRubricUnit2json(this.rubrics.length);
@@ -86,18 +87,9 @@ export class RubricbuilderComponent implements OnInit {
   )}
 
   importJSON2Rubric() {
+    console.log(this.parsedJSON)
     try {
-      var parsed: any = []; 
-      const importjson:string = JSON.stringify([{
-        name: name,
-        criterion: "some criterion",
-        radio: [{
-          score: 0,
-          feedback: "some feedback"
-        }]
-      }]);
-      parsed = JSON.parse(importjson);
-      this.rubrics = parsed;
+      this.rubrics =  JSON.parse(this.parsedJSON);
     } catch (error) {
       console.log("error:",error)
       if (error instanceof SyntaxError) {
