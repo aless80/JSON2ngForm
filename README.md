@@ -31,7 +31,13 @@ Point 1 and 2 above are implemented and work. Check them at the [/rubric/formspe
 
 Instead of reading from a local json file for the feature in point 2 (/rubric/formspec.json), I am going to store the json from point 1 in LocalStorage and use that one. In reality one could store the json in a database. 
 
-<a href="url"><img src="https://github.com/aless80/JSON2ngForm/blob/master/img/02_rubric.png" height="400" ></a>
+/rubricbuilder             |  /rubric
+:-------------------------:|:-------------------------:
+<a href="url"><img src="https://github.com/aless80/JSON2ngForm/blob/master/img/01_rubricbuilder.png" height="400" ></a>
+  |  <a href="url"><img src="https://github.com/aless80/JSON2ngForm/blob/master/img/02_rubric.png" height="400" ></a>
+
+
+
 
 
 
