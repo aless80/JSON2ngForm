@@ -10,6 +10,7 @@ export class RubricbuilderComponent implements OnInit {
   showImportArea:boolean = false;
   rubrics: any = [];
   parsedJSON:string;
+  showSaveMsg:boolean = false;
 
   ngOnInit() {
     this.addRubricUnit2json(this.rubrics.length);
@@ -103,6 +104,10 @@ export class RubricbuilderComponent implements OnInit {
 
   save() {
     localStorage.setItem('rubric', JSON.stringify(this.rubrics));
+    this.showSaveMsg = true;
+    setTimeout(()=>{
+      this.showSaveMsg = false;
+    }, 2500)
   }
 
   test(){

@@ -63,6 +63,7 @@
     <button class="btn-dark" (click)="exportJSON()" id="exportButton">Export JSON</button>
     <button class="btn-dark" (click)="showImportArea=!showImportArea" style="margin-left:1em;">Import JSON</button>
     <button class="btn-dark" (click)="save()" style="margin-left:1em;">Save</button>
+    <p *ngIf="showSaveMsg" style="color:rgb(125, 197, 9)">Rubric saved in local storage</p>
     <a id="download" download="rubric.json" hidden></a>
   </div>
   <div *ngIf="showImportArea">
