@@ -33,8 +33,7 @@ Instead of reading from a local json file for the feature in point 2 (/rubric/fo
 
 /rubricbuilder             |  /rubric
 :-------------------------:|:-------------------------:
-<a href="url"><img src="https://github.com/aless80/JSON2ngForm/blob/master/img/01_rubricbuilder.png" height="400" ></a>
-  |  <a href="url"><img src="https://github.com/aless80/JSON2ngForm/blob/master/img/02_rubric.png" height="400" ></a>
+<a href="url"><img src="https://github.com/aless80/JSON2ngForm/blob/master/img/01_rubricbuilder.png" height="400" ></a>  | <a href="url"><img src="https://github.com/aless80/JSON2ngForm/blob/master/img/02_rubric.png" height="400" ></a>
 
 
 
