@@ -31,9 +31,7 @@
 table {
   border: 1px solid black;
 }
-td {
-  border: 1px dotted gray;
-}
+
 button {
   margin-top: 5px;
   margin-bottom: 5px;
