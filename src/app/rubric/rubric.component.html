@@ -1,5 +1,9 @@
 <div class="app">
-  <h2> {{title}} </h2>
+  <h2>Rubric</h2>
+  <p>
+    This page is a rubric populated from the JSON file saved to localStorage in the rubric editor. Refer to the rubric editor here: <a href='/rubricbuilder'>/rubricbuilder</a>. 
+    The submit button in this page should be configured. It currently calls the postJSON method in the service, which runs a POST request to the /submitJSON endpoint.
+  </p>
   <div *ngIf="json">      
     <form [formGroup]="rubricForm" (ngSubmit)="onSubmit()">
       <div *ngFor="let elem of json; index as i">

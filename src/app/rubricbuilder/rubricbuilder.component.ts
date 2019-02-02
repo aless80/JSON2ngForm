@@ -101,6 +101,10 @@ export class RubricbuilderComponent implements OnInit {
     this.showImportArea = false;
   }
 
+  save() {
+    localStorage.setItem('rubric', JSON.stringify(this.rubrics));
+  }
+
   test(){
     console.log(this.rubrics)
   }

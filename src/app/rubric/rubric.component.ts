@@ -19,8 +19,6 @@ export class RubricComponent implements OnInit {
     private submitRubricService: SubmitRubricService
   ) {}
 
-  title = "Angular Forms from json";
-  jsonfile: string = "formspec";
   json = [];
   keys = [];
   values = [];
@@ -39,26 +37,42 @@ export class RubricComponent implements OnInit {
   ngOnInit() {
     /// Read the json file, populate the form group
     // The json file is given by its name. Its path is the /assets folder
+    var jsonfile: string;
     if (typeof this.route.snapshot.params.json !== 'undefined') {
-      this.jsonfile = this.route.snapshot.params.json;
+      jsonfile = this.route.snapshot.params.json;
+    } else {
+      //Use a demo json file in /assets
+      jsonfile = "formspec";
     }
-    if (!this.jsonfile.endsWith(".json")) {
-      this.jsonfile += '.json';
+    if (!jsonfile.endsWith(".json")) {
+      jsonfile += '.json';
     }
     // Read the json, populate variables
-    let path = "../../assets/";
-    this.readjson.getJSON(path + this.jsonfile).subscribe(data => {
-      this.json = data;
-      this.json.forEach((value, i) => {
-        this.keys[i] = value["name"];
-        this.values[i] = value["radio"][0].score;
+    var localrubric = localStorage.getItem('rubric');
+    if (localrubric !== null) {
+      console.log("JSON rubric from localStorage: ");
+      this.populateVarsAndForm(JSON.parse(localrubric))
+    } else {
+      let path = "../../assets/";
+      this.readjson.getJSON(path + jsonfile).subscribe(data => {
+        console.log("JSON rubric from "+path+jsonfile+" : ");
+        this.populateVarsAndForm(data)
       });
-      let group = {};
-      this.keys.forEach((key, i) => {
-        group[key] = this.values[i];
-      });
-      this.rubricForm = this.createForm(group);
+    }
+  }
+
+  populateVarsAndForm(json){
+    this.json = json;
+    console.log(this.json)
+    this.json.forEach((value, i) => {
+      this.keys[i] = value["name"];
+      this.values[i] = value["radio"][0].score;
     });
+    let group = {};
+    this.keys.forEach((key, i) => {
+      group[key] = this.values[i];
+    });
+    this.rubricForm = this.createForm(group);
   }
 
   onSubmit() {

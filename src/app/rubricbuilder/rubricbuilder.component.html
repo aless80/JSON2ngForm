@@ -6,7 +6,7 @@
     The rubric created here is used to generate a form/rubric visible in the
     <a href='/rubric'>/rubric</a> endpoint.
 
-    To do this, create a rubric by adding unists and click Save. The rubric will be stored in JSON format to the browser's local storage. The rubric in JSON format can also be exported to/imported from text using the Export/Import JSON buttons
+    To do this, create a rubric by adding unists and click Save. The rubric will be stored as JSON format in the browser's local storage. The rubric in JSON format can also be exported to/imported from text using the Export/Import JSON buttons
   </p>
 
   <table style="width:100%">
@@ -57,11 +57,12 @@
     <tbody>
   </table>
   <button class="btn-dark" id="addrubricunit" (click)="clickAppendRubricUnit()">Add Rubric Unit</button>
-  <button class="btn-dark" (click)="test()" style="margin-left:1em;">test</button>
+  <!--<button class="btn-dark" (click)="test()" style="margin-left:1em;">test</button>-->
   <br>
   <div *ngIf="!showImportArea">
     <button class="btn-dark" (click)="exportJSON()" id="exportButton">Export JSON</button>
     <button class="btn-dark" (click)="showImportArea=!showImportArea" style="margin-left:1em;">Import JSON</button>
+    <button class="btn-dark" (click)="save()" style="margin-left:1em;">Save</button>
     <a id="download" download="rubric.json" hidden></a>
   </div>
   <div *ngIf="showImportArea">
