@@ -5,31 +5,35 @@ Work in progress
 ## Project description
 My aim was to create a website with a rubric, i.e. a form with checkboxes (actually radio buttons) and text. The main structure for each textbox should be the same. 
 
-For example the following rubric has two components, each consisting in text for criterion, a variable number of radio buttons with associated number of points and feedback text: 
+For example the following rubric has two "components" (by component I just mean two repeated elements, not Angular components). Each component consists in a line of text (a criterion by which to judge some assignment), and a variable number of radio buttons with associated number of points and feedback text: 
 
-**Criterion: Spelling, punctuation, grammar**
-- [ ] 0 points  
-&nbsp;&nbsp;&nbsp;&nbsp; Feedback: Needs improvement!
-- [x] 3 points  
-&nbsp;&nbsp;&nbsp;&nbsp;Feedback: Satisfactory
-- [ ] 5 points  
-&nbsp;&nbsp;&nbsp;&nbsp;Feedback: Excellent
+&nbsp;&nbsp;&nbsp;**Criterion: Spelling, punctuation, grammar**
+&nbsp;&nbsp;&nbsp;- [ ] 0 points  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Feedback: Needs improvement!
+&nbsp;&nbsp;&nbsp;- [x] 3 points  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feedback: Satisfactory
+&nbsp;&nbsp;&nbsp;- [ ] 5 points  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feedback: Excellent
 
-**Criterion: Text comprehension**
-- [ ] 0 points  
-&nbsp;&nbsp;&nbsp;&nbsp; Feedback: Several required elements are missing
-- [x] 5 points   
-&nbsp;&nbsp;&nbsp;&nbsp; Feedback: The text content is clearly identified and reproduced
+&nbsp;&nbsp;&nbsp;**Criterion: Text comprehension**
+&nbsp;&nbsp;&nbsp;- [ ] 0 points  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Feedback: Several required elements are missing
+&nbsp;&nbsp;&nbsp;- [x] 5 points   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Feedback: The text content is clearly identified and reproduced
 
-I wanted to make this process dynamic and let the user create the rubric. In particular I needed two webpages: 
-1. A page allowing users to generate a rubric. The user should adding each component (criterion, checkboxes with associated points and feedback) and type in text, number points, feedback. The specifications for the resulting rubric should be stored as json;
-2. As a final result, create the rubric as a form from a json specification.
+I wanted to make this process dynamic. In particular I needed two webpages: 
+1. A page allowing users to generate a rubric with any number of components. The user should add each component (criterion, checkboxes with associated points and feedback) and type in text, number points, feedback. The specifications for the resulting rubric should be importable/exportable as json;
+2. A page showing the rubric as a form from a json specification as the one in the previous point:
+
 
 ## Progress:
-Point 2 above is implemented and works. Check it at the [/rubric/formspec.json](http://localhost:4200/rubric/formspec.json) endpoint
+Point 1 and 2 above are implemented and work. Check them at the [/rubric/formspec.json](http://localhost:4200/rubric/formspec.json) and [/rubricbuilder](http://localhost:4200/rubricbuilder.json) endpoints
 
+Instead of reading from a local json file for the feature in point 2 (/rubric/formspec.json), I am going to store the json from point 1 in LocalStorage and use that one. In reality one could store the json in a database. 
 
 <a href="url"><img src="https://github.com/aless80/JSON2ngForm/blob/master/img/02_rubric.png" height="400" ></a>
+
+
 
 
 

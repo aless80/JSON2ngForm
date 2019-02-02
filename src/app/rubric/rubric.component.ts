@@ -1,11 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { HttpErrorResponse } from "@angular/common/http";
 import { FormGroup, FormBuilder } from "@angular/forms";
-import { FormControl } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
-import { switchMap } from "rxjs/operators";
 import { ReadjsonService } from "../services/readjson.service";
+import { SubmitRubricService } from '../services/submit-rubric.service';
 
 @Component({
   selector: "app-rubric",
@@ -17,7 +15,8 @@ export class RubricComponent implements OnInit {
     private http: HttpClient,
     private fb: FormBuilder,
     private readjson: ReadjsonService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private submitRubricService: SubmitRubricService
   ) {}
 
   title = "Angular Forms from json";
@@ -59,11 +58,6 @@ export class RubricComponent implements OnInit {
         group[key] = this.values[i];
       });
       this.rubricForm = this.createForm(group);
-      console.log("this.jsonfile:", this.jsonfile);
-      console.log("json:", this.json);
-      console.log("keys:", this.keys);
-      console.log("values:", this.values);
-      console.log("this.rubricForm.value", this.rubricForm.value);
     });
   }
 
@@ -85,5 +79,6 @@ export class RubricComponent implements OnInit {
       jsonout.push(res);
     });
     console.log("jsonout:", jsonout);
+    this.submitRubricService.postJSON(jsonout);
   }
 }

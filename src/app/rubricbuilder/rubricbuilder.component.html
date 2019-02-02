@@ -1,11 +1,12 @@
 <div class="app">
   <h2>Rubric Builder</h2>
   <p>
-    To do: This page will be a form where a user can add several elements
-    (instances of a component). A single element/component contains some text
-    and numeric &lt;input> elements. In this way the user will build a rubric,
-    which will be stored and/or export as json. The json can be used to generate
-    a rubric form as in the /rubric endpoint
+    This page is a rubric editor. The user creates a form composed of a number of single units. A single unit contains some text
+    and numeric &lt;input> elements. 
+    
+    The rubric created here is used to generate a form/rubric visible in the <a> href='/rubric'></a> endpoint.
+
+    To do this, create a rubric by adding unists and click Save. The rubric will be stored in JSON format to the browser's local storage. The rubric in JSON format can also be exported to/imported from text using the Export/Import JSON buttons
   </p>
 
   <table style="width:100%">
@@ -59,8 +60,9 @@
   <!--<button class="btn-dark" (click)="test()" style="margin-left:1em;">test</button>-->
   <br>
   <div *ngIf="!showImportArea">
-    <button class="btn-dark" (click)="downloadJson()" >Download JSON</button>
+    <button class="btn-dark" (click)="exportJSON()" id="exportButton">Export JSON</button>
     <button class="btn-dark" (click)="showImportArea=!showImportArea" style="margin-left:1em;">Import JSON</button>
+    <a id="download" download="rubric.json" hidden></a>
   </div>
   <div *ngIf="showImportArea">
     <textarea type="text" name="importjson" class="feedback" id="importjson" style="display: inline;" rows="3" cols="80" placeholder="json string" [(ngModel)]="importjson"></textarea>

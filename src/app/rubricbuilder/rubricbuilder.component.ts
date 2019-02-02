@@ -76,11 +76,10 @@ export class RubricbuilderComponent implements OnInit {
     return event.srcElement.id.split('_').slice(1)
   }
 
-  downloadJson() {
+  exportJSON() {
     of(this.rubrics).subscribe((res) => {
       const element = document.getElementById('download');
       element.setAttribute('href', `data:'text/json';charset=utf-8,${encodeURIComponent(JSON.stringify(res))}`);
-      //element.setAttribute('download', fileName);
       var event = new MouseEvent("click");
       element.dispatchEvent(event);
     }
