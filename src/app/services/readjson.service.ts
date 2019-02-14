@@ -21,7 +21,6 @@ export class ReadjsonService {
     this.http.get(json).subscribe(
       data => {
         this.config = data as FieldConfig[];
-        console.log('aaa',this.config);
       },
       (err: HttpErrorResponse) => {
         console.log(err.message);
