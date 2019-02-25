@@ -23,7 +23,7 @@ I wanted to make this process dynamic. In particular I needed two webpages:
 1. A page allowing users to generate a rubric with any number of components. The user should add each component (criterion, checkboxes with associated points and feedback) and type in text, number points, feedback. The specifications for the resulting rubric can be imported/exported as json and saved. Saving is done in the browser's local storage, but in a real implementation I suggest using a database;
 2. A page showing the rubric as a form from a json specification as the one in the previous point. If the json from point 1 is not present in localStorage, the page can read a local .json file in the /asset folder, whose name can be passed as an argument to the /rubric endpoint.
 
-Point 1 and 2 are available at the [/rubric/formspec.json](http://localhost:4200/rubric/formspec.json) and [/rubricbuilder](http://localhost:4200/rubricbuilder.json) endpoints, respectively. 
+Point 1 and 2 are available at the [/rubric](http://localhost:4200/rubric) and [/rubricbuilder](http://localhost:4200/rubricbuilder) endpoints, respectively. 
 
 Instead of reading from a local json file for the feature in point 2 (/rubric/formspec.json), I am going to store the json from point 1 in LocalStorage and use that one. In reality one could store the json in a database. 
 
