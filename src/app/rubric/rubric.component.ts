@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 import { ReadjsonService } from "../services/readjson.service";
 import { SubmitRubricService } from '../services/submit-rubric.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: "app-rubric",
@@ -18,7 +19,8 @@ export class RubricComponent implements OnInit {
     private route: ActivatedRoute,
     private submitRubricService: SubmitRubricService
   ) {}
-
+  
+  prod = environment.production;
   json = [];
   keys = [];
   values = [];

@@ -1,12 +1,19 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable, of } from "rxjs";
+import { SubmitRubricbuilderService } from '../services/submit-rubricbuilder.service';
+import { environment } from '../../environments/environment';
+
 @Component({
   selector: "app-rubricbuilder",
   templateUrl: "./rubricbuilder.component.html",
   styleUrls: ["./rubricbuilder.component.css"]
 })
 export class RubricbuilderComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private submitRubricbuilderService: SubmitRubricbuilderService
+  ) {}
+  
+  prod = environment.production;
   showImportArea:boolean = false;
   rubrics: any = [];
   parsedJSON:string;
@@ -108,6 +115,12 @@ export class RubricbuilderComponent implements OnInit {
     setTimeout(()=>{
       this.showSaveMsg = false;
     }, 2500)
+  }
+
+  // Handle the Close button. 
+  // In this example just send a POST request to /submitRubricbuilder that the user will handle as they wish
+  close() {
+    this.submitRubricbuilderService.submitRubricbuilder(this.rubrics);
   }
 
   test(){

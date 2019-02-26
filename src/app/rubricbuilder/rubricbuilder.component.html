@@ -1,6 +1,6 @@
 <div class="app">
   <h2>Rubric Builder</h2>
-  <p>
+  <p *ngIf="!prod">
     This page is a rubric editor. The user creates a form composed of a number of single units. A single unit contains some text
     and numeric &lt;input> elements. 
     The rubric created here is used to generate a form/rubric visible in the
@@ -63,6 +63,15 @@
     <button class="btn-dark" (click)="exportJSON()" id="exportButton">Export JSON</button>
     <button class="btn-dark" (click)="showImportArea=!showImportArea" style="margin-left:1em;">Import JSON</button>
     <button class="btn-dark" (click)="save()" style="margin-left:1em;">Save</button>
+    
+    
+    <button *ngIf="prod" class="btn-dark" (click)="close()" style="margin-left:1em;
+      ">Close</button>
+    <a *ngIf="!prod" href="/rubric">
+      <button class="btn-dark" (click)="close()" style="margin-left:1em;
+      ">Close</button>
+    </a>
+  
     <p *ngIf="showSaveMsg" style="color:rgb(125, 197, 9)">Rubric saved in local storage</p>
     <a id="download" download="rubric.json" hidden></a>
   </div>

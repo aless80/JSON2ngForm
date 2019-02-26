@@ -9,9 +9,9 @@ For example the following rubric has two "components" (by component I just mean 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [ ] 0 points  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Feedback: Needs improvement!
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [x] 3 points  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feedback: Satisfactory
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feedback: Satisfactory
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [ ] 5 points  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feedback: Excellent
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feedback: Excellent
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Criterion: Text comprehension**
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [ ] 0 points  
@@ -25,16 +25,16 @@ I wanted to make this process dynamic. In particular I needed two webpages:
 
 Point 1 and 2 are available at the [/rubric](http://localhost:4200/rubric) and [/rubricbuilder](http://localhost:4200/rubricbuilder) endpoints, respectively. 
 
-Instead of reading from a local json file for the feature in point 2 (/rubric/formspec.json), I am going to store the json from point 1 in LocalStorage and use that one. In reality one could store the json in a database. 
 
 /rubricbuilder             |  /rubric
 :-------------------------:|:-------------------------:
 <a href="https://github.com/aless80/JSON2ngForm/blob/master/img/01_rubricbuilder.png"><img src="https://github.com/aless80/JSON2ngForm/blob/master/img/01_rubricbuilder.png" height="400" ></a>  | <a href="https://github.com/aless80/JSON2ngForm/blob/master/img/02_rubric.png"><img src="https://github.com/aless80/JSON2ngForm/blob/master/img/02_rubric.png" height="400" ></a>
 
 
+## Suggested enhancements
+Instead of reading from a local json file for the feature in point 2 (/rubric/formspec.json), this implementation stores the json from point 1 in LocalStorage and use that one. In reality one could store the json in a database. 
 
-
-
+The Close button in the rubricbuilder points to the /rubric endpoint and sends a post request to the /submitrubricbuilder endpoint, but the user might want change that as they please.
 
 
 
