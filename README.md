@@ -6,6 +6,7 @@ My aim was to create a website with a rubric, i.e. a form with checkboxes (actua
 For example the following rubric has two "components" (by component I just mean two repeated elements, not Angular components). Each component consists in a line of text (a criterion by which to judge some assignment), and a variable number of radio buttons with associated number of points and feedback text: 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Criterion: Spelling, punctuation, grammar**
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [ ] 0 points  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Feedback: Needs improvement!
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [x] 3 points  
@@ -14,6 +15,7 @@ For example the following rubric has two "components" (by component I just mean 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feedback: Excellent
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Criterion: Text comprehension**
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [ ] 0 points  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Feedback: Several required elements are missing
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [x] 5 points   
